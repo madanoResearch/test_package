@@ -1,10 +1,11 @@
-import prefect_deployment
 import os
 import data_load_flow
 import sys
 
 
 sys.path.append('C:/Users/dfleetwood/Documents/prefect_deployment')
+
+import prefect_deployment
 
 
 # if __name__ == '__main__':
