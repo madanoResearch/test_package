@@ -23,7 +23,7 @@ prefect_deployment.deploy.deploy_flow(
     requirements="./requirements.txt",
     # project="test-project",
     # synch_dvc=True,
-    run=False
-    to_email_address="darrenfleetwood@gmail.com",
+    run=True,
+    to_email_address="darrenfleetwood@gmail.com"
     # working_dir=dir_path
 )
