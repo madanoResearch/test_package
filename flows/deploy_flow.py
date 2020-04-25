@@ -25,6 +25,6 @@ prefect_deployment.deploy.deploy_flow(
     # project="test-project",
     # synch_dvc=True,
     run=True,
-    to_email_address="darrenfleetwood@gmail.com"
+    email_address="darrenfleetwood@gmail.com"
     # working_dir=dir_path
 )
