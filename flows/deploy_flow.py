@@ -1,3 +1,4 @@
+import prefect_deployment
 import os
 import data_load_flow
 import sys
@@ -5,7 +6,6 @@ import sys
 
 sys.path.append('C:/Users/dfleetwood/Documents/prefect_deployment')
 
-import prefect_deployment
 
 # if __name__ == '__main__':
 
@@ -24,6 +24,6 @@ prefect_deployment.deploy.deploy_flow(
     # project="test-project",
     # synch_dvc=True,
     run=False
-    # to_email_address="darren.fleetwood@madano.com",
+    to_email_address="darrenfleetwood@gmail.com",
     # working_dir=dir_path
 )
