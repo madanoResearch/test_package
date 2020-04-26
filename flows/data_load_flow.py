@@ -9,7 +9,7 @@ import cloudpickle
 
 
 @task(name="Data check load", log_stdout=True)
-def data_check():
+def data_check(param_t):
 
     logger = prefect.utilities.logging.get_logger()
 
@@ -18,6 +18,7 @@ def data_check():
     logger.debug("Loaded data")
     logger.debug(data_x.shape)
     print(data_x.shape)
+    print(param_t)
 
 # @task(name="Data check v2 dot", log_stdout=True)
 # def data_check_v2():
@@ -31,8 +32,11 @@ def data_check():
 
 
 with Flow("data_load_test") as flow:
-    flow.add_task(data_check)
-    flow.add_task(Parameter("test_param", default="a"))
+    test_param = Parameter("test_param", default="a")
+    data_check(test_param)
+
+    # flow.add_task(data_check)
+    #flow.add_task(Parameter("test_param", default="a"))
 
 #flow = Flow("data_load_test",  tasks=[data_check])
 
