@@ -7,6 +7,7 @@ sys.path.append('C:/Users/dfleetwood/Documents/prefect_deployment')
 
 import prefect_deployment
 
+print (os.getcwd())
 
 prefect_deployment.deploy.deploy_flow(
     data_load_flow.flow,
