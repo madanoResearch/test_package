@@ -1,5 +1,5 @@
 import prefect
-from prefect import task, Flow
+from prefect import task, Flow, Parameter
 from prefect.environments.storage import Docker
 import os
 import subprocess
@@ -30,7 +30,11 @@ def data_check():
 #     logger.debug (data_x.shape)
 
 
-flow = Flow("data_load_test",  tasks=[data_check])
+with Flow("data_load_test") as flow:
+    flow.add_task(data_check)
+    flow.add_task(Parameter("test_param", default="a"))
+
+#flow = Flow("data_load_test",  tasks=[data_check])
 
 # with open("./data_load_test", "wb") as f:
 #     cloudpickle.dump(flow, f)
