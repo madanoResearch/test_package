@@ -11,6 +11,6 @@ import prefect_deployment
 prefect_deployment.deploy.deploy_flow(
     data_load_flow.flow,
     requirements="./requirements.txt",
-    run=True
-    # email_address="darrenfleetwood@gmail.com"
+    run=True,
+    email_address="darrenfleetwood@gmail.com"
 )
