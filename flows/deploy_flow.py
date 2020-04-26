@@ -1,9 +1,9 @@
 import os
 import data_load_flow
-#import sys
+import sys
 
 
-# sys.path.append('C:/Users/dfleetwood/Documents/prefect_deployment')
+sys.path.append('C:/Users/dfleetwood/Documents/prefect_deployment')
 
 import prefect_deployment
 
