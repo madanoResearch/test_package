@@ -3,8 +3,8 @@ from prefect import task, Flow, Parameter
 
 
 @task
-def hello():
-    print("1")
+def hello(message):
+    print(message)
     # return ("hello")
 
 
@@ -36,7 +36,8 @@ def hello_again2(message):
 
 with Flow("demo_flow") as flow:
 
-    hello_again.set_downstream(hello)
+    message = Parameter('message', default="hello")
+    hello_again(message)
 
     message2 = hello2()
     hello_again2(message2)
